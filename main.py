@@ -18,3 +18,8 @@ def dar_alta(nombre: str, telefono: str):
     f.write("{\"nombre\":\"" + nombre + "\",\"telefono\":\"" + telefono + "\"}")
     f.close()
     return {"alta":"ok"}
+
+@app.delete("/borrar")
+def borrar():
+    open("contactos.txt", "w").close()
+    return {"borrado":"ok"}
