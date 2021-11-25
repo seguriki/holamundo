@@ -10,7 +10,7 @@ def read_root():
 @app.get("/listar")
 def listar():
     f = open("contactos.txt", "r")
-    return {f.read()}
+    return f.read()
 
 @app.post("/alta/{nombre}/{telefono}")
 def dar_alta(nombre: str, telefono: str):
