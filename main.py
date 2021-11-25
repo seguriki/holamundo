@@ -14,7 +14,7 @@ def listar():
 
 @app.post("/alta/{nombre}/{telefono}")
 def dar_alta(nombre: str, telefono: str):
-    f = open("contactos.txt", "w")
+    f = open("contactos.txt", "a")
     f.write("{\"nombre\":\"" + nombre + "\",\"telefono\":\"" + telefono + "\"}")
     f.close()
     return {"alta":"ok"}
